@@ -24,8 +24,6 @@
 (require 'setup-cedet)
 (require 'setup-editing)
 
-
-
 ;; function-args
 ;; (require 'function-args)
 ;; (fa-config-default)
@@ -38,10 +36,39 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))))
+    (buffer-move sr-speedbar zygospore helm-gtags helm yasnippet
+    ws-butler volatile-highlights use-package iedit dtrt-indent
+    counsel-projectile company clean-aindent-mode anzu))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(minibuffer-prompt ((t (:foreground "red"))))
+ '(package-name ((t (:inherit link :foreground "green"))))
+ '(speedbar-directory-face ((t (:foreground "red")))))
+
+
+(setq sr-speedbar-show-unknown-files t)
+
+(global-set-key (kbd "<C-S-up>")     'buf-move-up)
+(global-set-key (kbd "<C-S-down>")   'buf-move-down)
+(global-set-key (kbd "<C-S-left>")   'buf-move-left)
+(global-set-key (kbd "<C-S-right>")  'buf-move-right)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
+(setq
+ ;; use gdb-many-windows by default
+ gdb-many-windows t
+
+ ;; Non-nil means display source file containing the main routine at startup
+ gdb-show-main t
+)
+
+(defun my-mode1 ()
+  (show-paren-mode)
+  (setq linum-format "%4d \u2502 ")
+  (linum-mode))
+
+(defvar hooks '(c-mode-common-hook c-mode-hook c++-mode-hook makefile-mode-hook sh-mode-hook))
+(mapcar (lambda (a) (add-hook a 'my-mode1)) hooks)
