@@ -72,3 +72,7 @@
 
 (defvar hooks '(c-mode-common-hook c-mode-hook c++-mode-hook makefile-mode-hook sh-mode-hook))
 (mapcar (lambda (a) (add-hook a 'my-mode1)) hooks)
+
+(require 'tls)
+(require 'erc)
+(require 'nix-mode)
