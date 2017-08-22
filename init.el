@@ -76,3 +76,7 @@
 (require 'tls)
 (require 'erc)
 (require 'nix-mode)
+
+;; Saves directory
+(setq backup-directory-alist `(("." . "~/.emacs.d/saves"))
+      backup-by-copying t)
