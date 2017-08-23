@@ -36,18 +36,13 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (buffer-move sr-speedbar zygospore helm-gtags helm yasnippet
-    ws-butler volatile-highlights use-package iedit dtrt-indent
-    counsel-projectile company clean-aindent-mode anzu))))
+    (magit buffer-move sr-speedbar zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(minibuffer-prompt ((t (:foreground "red"))))
- '(package-name ((t (:inherit link :foreground "green"))))
- '(speedbar-directory-face ((t (:foreground "red")))))
-
+ )
 
 (setq sr-speedbar-show-unknown-files t)
 
