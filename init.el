@@ -75,3 +75,12 @@
 ;; Saves directory
 (setq backup-directory-alist `(("." . "~/.emacs.d/saves"))
       backup-by-copying t)
+
+(global-set-key (kbd "M-c") 'helm-M-x)
+(setq gdb-show-threads-by-default t
+      gdb-non-stop-setting t
+      gdb-non-stop t
+      gdb-gud-control-all-threads nil)
+
+(global-set-key (kbd "C-x p") (lambda () (interactive) (other-window 2)))
+(global-set-key (kbd "C-x C-a C-v") 'gdb-restore-windows)
