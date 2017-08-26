@@ -84,3 +84,5 @@
 
 (global-set-key (kbd "C-x p") (lambda () (interactive) (other-window 2)))
 (global-set-key (kbd "C-x C-a C-v") 'gdb-restore-windows)
+
+(load "~/.emacs.d/custom/kconfig-mode.el")
