@@ -86,3 +86,6 @@
 (global-set-key (kbd "C-x C-a C-v") 'gdb-restore-windows)
 
 (load "~/.emacs.d/custom/kconfig-mode.el")
+(add-to-list 'load-path "~/.emacs.d/disaster")
+(require 'disaster)
+(define-key c-mode-base-map (kbd "C-c d") 'disaster)
